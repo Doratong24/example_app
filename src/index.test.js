@@ -9,11 +9,11 @@ describe('Our first test', () => {
 });
 
 describe('index.html', () => {
-  it('should say hello', (done) => { // add 'done' to make it asynchronous
+  it('should have h1', (done) => { // add 'done' to make it asynchronous
     const index = fs.readFileSync('./src/index.html', 'utf-8');
     jsdom.env(index, function(err, window) {
       const h1 = window.document.getElementsByTagName('h1')[0];
-      expect(h1.innerHTML).to.equal("Hello World?!");
+      expect(h1.innerHTML).to.equal("Users");
       done(); // call done
       window.close();
     }); // can pass JS files as 2nd param
